@@ -11,13 +11,13 @@ SET FOREIGN_KEY_CHECKS = 0;
 -- ----------------------------------------------------------------------------
 -- Schema sistema_ventas0
 -- ----------------------------------------------------------------------------
-DROP SCHEMA IF EXISTS `sistema_ventas0` ;
-CREATE SCHEMA IF NOT EXISTS `sistema_ventas0` ;
+DROP SCHEMA IF EXISTS `sistema_ventas1` ;
+CREATE SCHEMA IF NOT EXISTS `sistema_ventas1` ;
 
 -- ----------------------------------------------------------------------------
 -- Table sistema_ventas0.clientes
 -- ----------------------------------------------------------------------------
-CREATE TABLE IF NOT EXISTS `sistema_ventas0`.`clientes` (
+CREATE TABLE IF NOT EXISTS `sistema_ventas1`.`clientes` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `dni` BIGINT NULL DEFAULT NULL,
   `nombre` VARCHAR(100) NULL DEFAULT NULL,
@@ -31,9 +31,9 @@ DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
 
 -- ----------------------------------------------------------------------------
--- Table sistema_ventas0.config
+-- Table sistema_ventas1.config
 -- ----------------------------------------------------------------------------
-CREATE TABLE IF NOT EXISTS `sistema_ventas0`.`config` (
+CREATE TABLE IF NOT EXISTS `sistema_ventas1`.`config` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `nombre` VARCHAR(200) NOT NULL,
   `ruc` VARCHAR(200) NOT NULL,
@@ -49,7 +49,7 @@ COLLATE = utf8mb4_0900_ai_ci;
 -- ----------------------------------------------------------------------------
 -- Table sistema_ventas0.detalle
 -- ----------------------------------------------------------------------------
-CREATE TABLE IF NOT EXISTS `sistema_ventas0`.`detalle` (
+CREATE TABLE IF NOT EXISTS `sistema_ventas1`.`detalle` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `cod_pro` VARCHAR(100) NULL DEFAULT NULL,
   `fecha` VARCHAR(150) NULL DEFAULT NULL,
@@ -71,9 +71,9 @@ DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
 
 -- ----------------------------------------------------------------------------
--- Table sistema_ventas0.productos
+-- Table sistema_ventas1.productos
 -- ----------------------------------------------------------------------------
-CREATE TABLE IF NOT EXISTS `sistema_ventas0`.`productos` (
+CREATE TABLE IF NOT EXISTS `sistema_ventas1`.`productos` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `codigo` VARCHAR(100) NULL DEFAULT NULL,
   `nombre` VARCHAR(150) NULL DEFAULT NULL,
@@ -89,9 +89,9 @@ DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
 
 -- ----------------------------------------------------------------------------
--- Table sistema_ventas0.proveedores
+-- Table sistema_ventas1.proveedores
 -- ----------------------------------------------------------------------------
-CREATE TABLE IF NOT EXISTS `sistema_ventas0`.`proveedores` (
+CREATE TABLE IF NOT EXISTS `sistema_ventas1`.`proveedores` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `ruc` VARCHAR(250) NOT NULL,
   `nombre` VARCHAR(250) NOT NULL,
@@ -105,9 +105,9 @@ DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
 
 -- ----------------------------------------------------------------------------
--- Table sistema_ventas0.usuarios
+-- Table sistema_ventas1.usuarios
 -- ----------------------------------------------------------------------------
-CREATE TABLE IF NOT EXISTS `sistema_ventas0`.`usuarios` (
+CREATE TABLE IF NOT EXISTS `sistema_ventas1`.`usuarios` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `nombre` VARCHAR(100) NULL DEFAULT NULL,
   `pass` VARCHAR(100) NULL DEFAULT NULL,
@@ -122,7 +122,7 @@ COLLATE = utf8mb4_0900_ai_ci;
 -- ----------------------------------------------------------------------------
 -- Table sistema_ventas0.ventas
 -- ----------------------------------------------------------------------------
-CREATE TABLE IF NOT EXISTS `sistema_ventas0`.`ventas` (
+CREATE TABLE IF NOT EXISTS `sistema_ventas1`.`ventas` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `cliente` VARCHAR(100) NULL DEFAULT NULL,
   `vendedor` VARCHAR(100) NULL DEFAULT NULL,
